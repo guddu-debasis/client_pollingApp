@@ -15,7 +15,10 @@ const PollDetails = () => {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        const newSocket = io('http://localhost:5000');
+        const newSocket = io('https://server-pollingapp.onrender.com', {
+        transports: ['websocket'],
+        });
+
         setSocket(newSocket);
 
         newSocket.emit('join_poll', id);
