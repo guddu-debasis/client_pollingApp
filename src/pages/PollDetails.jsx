@@ -15,7 +15,7 @@ const PollDetails = () => {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        const newSocket = io('https://server-pollingapp.onrender.com', {
+        const newSocket = io(import.meta.env.VITE_SOCKET_URL, {
         transports: ['websocket'],
         });
 
