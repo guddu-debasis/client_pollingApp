@@ -1,5 +1,5 @@
 import { io } from "socket.io-client";
 
-export const socket = io("https://server-pollingapp.onrender.com", {
+export const socket = io(import.meta.env.VITE_SOCKET_URL, {
   transports: ["websocket"],
 });
